@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Abel", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 290px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: #000000;
+    position: relative;
+}
+
+.main .display {
+    width: 100%;
+    aspect-ratio: 1/0.6;
+    display: flex;
+    flex-direction: column;
+}
+
+.main .display .cal-box {
+    flex: 1;
+    display: flex;
+    align-items: end;
+
+}
+
+.main .display .cal-box input::placeholder {
+    color: white;
+}
+
+.main .display .cal-box input {
+    width: 100%;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: right;
+    padding: 0px 10px;
+    color: white;
+}
+
+.main .display .icon {
+    color: white;
+    padding: 10px;
+}
+
+.main .display .icon i {
+    background: linear-gradient(45deg, #7a0240, #ff2495);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.main .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px 15px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 20px 20px 0px 0px;
+    /* font-family: "Abel", sans-serif; */
+    font-weight: 900;
+    font-family: "Vast Shadow", serif;
+
+}
+
+.main .buttons button {
+    padding: 15px 0px;
+    border: none;
+    outline: none;
+    background: linear-gradient(45deg, #ffffff1e, #ffffff33);
+    border-radius: 10px;
+    color: #FFF;
+    font-size: 18px;
+
+}
+
+.main .buttons button.number {
+    background: linear-gradient(45deg, #7a0240, #ff2495);
+    border: none;
+}
+
+.main .buttons button:last-child {
+    grid-column: span 2 / span 2;
+}
+
+.main .buttons button:first-child {
+    background: linear-gradient(to top, #5a0101, #ff245e);
+}
+
+@media only screen and (width < 500px) {
+    .main {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .display {
+        flex: 1;
+        padding-top: 20px;
+    }
+
+    .display i {
+        font-size: 25px;
+    }
+}
+
+
+.main .storage {
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+
+.main .storage .icon {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: end;
+}
+
+.main .storage .icon h1 {
+    font-size: 20px;
+}
+
+.main .storage.active-storage {
+    transform: translateX(0%);
+}
+
+.main .storage i {
+    font-size: 20px;
+    background: linear-gradient(to top, #5a0101, #ff245e);
+    padding: 7px 10px;
+    color: white;
+    border-radius: 3px;
+}
+
+.main .storage .data {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    color: white;
+}
+
+.main .storage .data div {
+    background-color: rgba(255, 255, 255, 0.091);
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.main .storage .data h3 {
+    font-size: 15px;
+}
+
+.main .storage .data p {
+    font-size: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
